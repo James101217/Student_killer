@@ -1,7 +1,5 @@
 @echo off
-loop
-taskkill f im Student.exe
-move CProgram Files (x86)ITMSITBC 13Student.exe C
-timeout t 3
-
-goto loop
+icacls "C:\Program Files (x86)\ITMS\ITBC 13\Student.exe" /deny Everyone:RX
+taskkill /f /im Student.exe /t
+echo Done.
+pause
